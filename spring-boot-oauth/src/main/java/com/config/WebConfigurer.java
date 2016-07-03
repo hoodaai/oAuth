@@ -37,6 +37,8 @@ public class WebConfigurer implements ServletContextInitializer, EmbeddedServlet
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**");
+               // registry.addMapping("/oauth/token");
+
             }
         };
     }

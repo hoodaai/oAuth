@@ -60,6 +60,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .antMatchers("/web/login").permitAll()
                     .antMatchers("/web/register").permitAll()
                     .antMatchers("/web", "/web/home").permitAll()
+                    .antMatchers(org.springframework.http.HttpMethod.OPTIONS, "/api/**").permitAll()
                     .antMatchers("/web/hello", "/web/hello").hasAuthority(AuthoritiesConstants.USER)
                     .and()
                     .exceptionHandling().accessDeniedPage("/403");
