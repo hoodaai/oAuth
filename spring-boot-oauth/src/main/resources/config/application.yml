@@ -16,7 +16,7 @@ spring:
         open-in-view: false
         hibernate:
             ddl-auto: none
-            show-sql: true
+            show-sql: false
             naming-strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
     messages:
         basename: classpath:/i18n/messages
@@ -47,6 +47,9 @@ jhipster:
         rememberme:
             # security key (this key should be unique for your application, and kept secret)
             key: 9f201120b36e60e533b6f7f83e9f2b9abd1ba8bb
+
+    outputdirectory: /tmp
+
 
 
 #spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect

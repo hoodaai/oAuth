@@ -20,8 +20,16 @@ public class ApplicationProperties {
 
     private final CorsConfiguration cors = new CorsConfiguration();
     private final Security security = new Security();
+    private  String outputdirectory;
 
 
+    public String getOutputdirectory() {
+        return outputdirectory;
+    }
+
+    public void setOutputdirectory(String outputdirectory) {
+        this.outputdirectory = outputdirectory;
+    }
 
     public CorsConfiguration getCors() {
         return cors;
