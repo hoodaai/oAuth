@@ -68,7 +68,6 @@ public class OAuth2ServerConfiguration {
                     .antMatchers("/api/authenticate").permitAll()
                     .antMatchers("/api/register").permitAll()
                     .antMatchers("/web/login").permitAll()
-                    .antMatchers("/api/publisher/**").hasAuthority(AuthoritiesConstants.PUBLISHER)
                     .antMatchers("/api/**").authenticated();
 
         }
@@ -107,7 +106,7 @@ public class OAuth2ServerConfiguration {
                     .inMemory()
                     .withClient(applicationProperties.getSecurity().getAuthentication().getOauth().getClientid())
                     .scopes("read", "write")
-                    .authorities(AuthoritiesConstants.ADMIN, AuthoritiesConstants.USER, AuthoritiesConstants.PUBLISHER)
+                    .authorities(AuthoritiesConstants.ADMIN, AuthoritiesConstants.USER)
                     .authorizedGrantTypes("password", "refresh_token", "authorization_code", "implicit")
                     .secret(applicationProperties.getSecurity().getAuthentication().getOauth().getSecret())
                     .accessTokenValiditySeconds(applicationProperties.getSecurity().getAuthentication().getOauth().getTokenValidityInSeconds());
